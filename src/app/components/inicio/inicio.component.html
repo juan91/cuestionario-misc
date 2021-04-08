@@ -1,0 +1,50 @@
+<div class="overlay"></div>
+<video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+  <source src="assets/mp4/bg.mp4" type="video/mp4">
+</video>
+
+<div class="masthead">
+  <div class="masthead-bg"></div>
+  <div class="container h-100">
+    <div class="row h-100">
+      <div class="col-12 my-auto">
+        <div class="masthead-content text-white py-5 py-md-0">
+          <h1 class="mb-3">Hola Bienvenid@!</h1>
+          <p class="mb-5">Para llenar el cuestionario por favor ingresa tu correo, este te servirá para enviarte los resultados :)            
+          <div class="input-group input-group-newsletter">
+            <input type="email" class="form-control" placeholder="Enter email..." aria-label="Enter email..." name="email" [(ngModel)]="email">
+            <div class="input-group-append">
+              <button class="btn btn-secondary" type="button" id="submit-button" (click)="ingresar()">Ingresar</button>
+            </div>         
+          </div>        
+          <div class="alert alert-danger mt-2" role="alert" *ngIf="error">
+            Ingrese un Email Correcto!
+          </div>
+        </div>
+      </div>
+      <div class="col-12 justify-content-center">
+      <p class="mb-5" style="color: aliceblue;"> (c) {{fecha}} | Juan Delgado & Victor Paredez </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="social-icons">
+  <ul class="list-unstyled text-center mb-0">
+    <li class="list-unstyled-item">
+      <a href="#">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+    <li class="list-unstyled-item">
+      <a href="#">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </li>
+    <li class="list-unstyled-item">
+      <a href="#">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </li>
+  </ul>
+</div>
