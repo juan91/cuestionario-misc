@@ -8,12 +8,16 @@ import { TestComponent } from './components/test/test.component';
 
 import {app_routing} from './app.routes';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { RespuestasComponent } from './components/respuestas/respuestas.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TestComponent,
-    InicioComponent
+    InicioComponent,
+    RespuestasComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
