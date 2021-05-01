@@ -42,17 +42,35 @@ export class TestComponent implements OnInit {
       case "p3":
         this.respuestas.push({p: pregunta, r})          
         break;
-        case "p4":
+      case "p4":
       this.respuestas.push({p: pregunta, r})  
         break;
-        case "p5":
+      case "p5":
+      this.respuestas.push({p: pregunta, r})
+        break;
+      case "p6":
+      this.respuestas.push({p: pregunta, r}) 
+      break;
+      case "p7":
       this.respuestas.push({p: pregunta, r})  
+      break;
+      case "p8":
+      this.respuestas.push({p: pregunta, r})  
+      break;
+      case "p9":
+      this.respuestas.push({p: pregunta, r})  
+      break;
+      case "p10":
+      this.respuestas.push({p: pregunta, r})  
+      break;
+      case "p11":
+      this.respuestas.push({p: pregunta, r})  
+      break;
     }            
   }
 
-
   async determinarRasgoDePersonalidad() {
-    if (this.respuestas.length < 5) {
+    if (this.respuestas.length < 11) {
       alert("Por favor complete todo el test")
       return;
     }
@@ -109,6 +127,82 @@ export class TestComponent implements OnInit {
           this.rasgos.push({r: "Eres una persona que a veces se precupa por los demás. es decir, en las situaciones adversas las acoges con tranquilidad"})
         } else {
           this.rasgos.push({r: "Eres una persona que nunca se preocupa por los demás. "})
+        }
+      }
+      // ALEJANDRO
+      if(item.p === "p6") {
+        if (item.r === "option1") {
+          this.rasgos.push({r: "Eres hombre"})
+        }else {
+          this.rasgos.push({r: "Eres mujer. "})
+        }
+      }
+
+      if(item.p === "p7") {
+        if (item.r === "semetre1") {
+          this.rasgos.push({r: "Estas en primer semestre"})
+        } else if(item.r === "option2"){
+          this.rasgos.push({r: "Estas en segundo semestre"})
+        }else if(item.r === "option3"){
+          this.rasgos.push({r: "Estas en tercer semestre"})
+        }else if(item.r === "option4"){
+          this.rasgos.push({r: "Estas en cuarto semestre"})
+        }else if(item.r === "option5"){
+          this.rasgos.push({r: "Estas en quinto semestre"})
+        }else if(item.r === "option6"){
+          this.rasgos.push({r: "Estas en sexto semestre"})
+        }else if(item.r === "option7"){
+          this.rasgos.push({r: "Estas en septimo semestre"})
+        }else if(item.r === "option8"){
+          this.rasgos.push({r: "Estas en octavo semestre"})
+        }else if(item.r === "option9"){
+          this.rasgos.push({r: "Estas en noveno semestre"})
+        }else {
+          this.rasgos.push({r: "Estas en decimo semeste "})
+        }
+      }
+
+      if(item.p === "p8") {
+        if (item.r === "option1") {
+          this.rasgos.push({r: "Si soy propietario"})
+        }else {
+          this.rasgos.push({r: "No soy propietario "})
+        }
+      }
+
+      if(item.p === "p9") {
+        if (item.r === "option1") {
+          this.rasgos.push({r: "Menos de una hora"})
+        }else if(item.r === "option2"){
+          this.rasgos.push({r:"Una a tres horas diarias."})
+        }else if(item.r === "option3"){
+          this.rasgos.push({r:"Cuatro a seis horas diarias."})
+        }else {
+          this.rasgos.push({r: "Seis a nueve horas diarias."})
+        }
+      }
+
+      if(item.p === "p10") {
+        if (item.r === "option1") {
+          this.rasgos.push({r: "Una vez al mes."})
+        }else if(item.r === "option2"){
+          this.rasgos.push({r:"Algunas veces al mes."})
+        }else if(item.r === "option3"){
+          this.rasgos.push({r:"Una vez a las semana."})
+        }else {
+          this.rasgos.push({r: "Nunca."})
+        }
+      }
+
+      if(item.p === "p11") {
+        if (item.r === "option1") {
+          this.rasgos.push({r:"Google chrome."})
+        }else if(item.r === "option2"){
+          this.rasgos.push({r:"Safari."})
+        }else if(item.r === "option3"){
+          this.rasgos.push({r:"Mozilla firefox"})
+        }else {
+          this.rasgos.push({r:"Internet explorer"})
         }
       }
     });
