@@ -132,77 +132,77 @@ export class TestComponent implements OnInit {
       // ALEJANDRO
       if(item.p === "p6") {
         if (item.r === "option1") {
-          this.rasgos.push({r: "Eres hombre"})
+          this.rasgos.push({r: "M",p:6})
         }else {
-          this.rasgos.push({r: "Eres mujer. "})
+          this.rasgos.push({r: "F",p:6})
         }
       }
 
       if(item.p === "p7") {
         if (item.r === "semetre1") {
-          this.rasgos.push({r: "Estas en primer semestre"})
+          this.rasgos.push({r: "1",p:7})
         } else if(item.r === "option2"){
-          this.rasgos.push({r: "Estas en segundo semestre"})
+          this.rasgos.push({r: "2",p:7})
         }else if(item.r === "option3"){
-          this.rasgos.push({r: "Estas en tercer semestre"})
+          this.rasgos.push({r: "3",p:7})
         }else if(item.r === "option4"){
-          this.rasgos.push({r: "Estas en cuarto semestre"})
+          this.rasgos.push({r: "4",p:7})
         }else if(item.r === "option5"){
-          this.rasgos.push({r: "Estas en quinto semestre"})
+          this.rasgos.push({r: "5",p:7})
         }else if(item.r === "option6"){
-          this.rasgos.push({r: "Estas en sexto semestre"})
+          this.rasgos.push({r: "6",p:7})
         }else if(item.r === "option7"){
-          this.rasgos.push({r: "Estas en septimo semestre"})
+          this.rasgos.push({r: "7",p:7})
         }else if(item.r === "option8"){
-          this.rasgos.push({r: "Estas en octavo semestre"})
+          this.rasgos.push({r: "8",p:7})
         }else if(item.r === "option9"){
-          this.rasgos.push({r: "Estas en noveno semestre"})
+          this.rasgos.push({r: "9",p:7})
         }else {
-          this.rasgos.push({r: "Estas en decimo semeste "})
+          this.rasgos.push({r: "10",p:7})
         }
       }
 
       if(item.p === "p8") {
         if (item.r === "option1") {
-          this.rasgos.push({r: "Si soy propietario"})
+          this.rasgos.push({r: "Si",p:8})
         }else {
-          this.rasgos.push({r: "No soy propietario "})
+          this.rasgos.push({r: "No",p:8})
         }
       }
 
       if(item.p === "p9") {
         if (item.r === "option1") {
-          this.rasgos.push({r: "Menos de una hora"})
+          this.rasgos.push({r: "Menos de una hora",p:9})
         }else if(item.r === "option2"){
-          this.rasgos.push({r:"Una a tres horas diarias."})
+          this.rasgos.push({r:"Una a tres horas diarias",p:9})
         }else if(item.r === "option3"){
-          this.rasgos.push({r:"Cuatro a seis horas diarias."})
+          this.rasgos.push({r:"Cuatro a seis horas diarias",p:9})
         }else {
-          this.rasgos.push({r: "Seis a nueve horas diarias."})
+          this.rasgos.push({r: "Seis a nueve horas diarias",p:9})
         }
       }
 
       if(item.p === "p10") {
         if (item.r === "option1") {
-          this.rasgos.push({r: "Una vez al mes."})
+          this.rasgos.push({r: "Una vez al mes",p:10})
         }else if(item.r === "option2"){
-          this.rasgos.push({r:"Algunas veces al mes."})
+          this.rasgos.push({r:"Algunas veces al mes",p:10})
         }else if(item.r === "option3"){
-          this.rasgos.push({r:"Una vez a las semana."})
+          this.rasgos.push({r:"Una vez a las semana",p:10})
         }else {
-          this.rasgos.push({r: "Nunca."})
+          this.rasgos.push({r: "Nunca.",p:10})
         }
       }
 
       if(item.p === "p11") {
         if (item.r === "option1") {
-          this.rasgos.push({r:"Google chrome."})
+          this.rasgos.push({r:"Google chrome",p:11})
         }else if(item.r === "option2"){
-          this.rasgos.push({r:"Safari."})
+          this.rasgos.push({r:"Safari",p:11})
         }else if(item.r === "option3"){
-          this.rasgos.push({r:"Mozilla firefox"})
+          this.rasgos.push({r:"Mozilla firefox",p:11})
         }else {
-          this.rasgos.push({r:"Internet explorer"})
+          this.rasgos.push({r:"Internet explorer",p:11})
         }
       }
     });
