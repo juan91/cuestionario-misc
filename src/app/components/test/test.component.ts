@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Session } from 'protractor';
+import { UserService } from 'src/app/services/user.service';
 @Component({
   selector: 'app-test',
   templateUrl: './test.component.html',
@@ -12,7 +13,9 @@ export class TestComponent implements OnInit {
 
   rasgos:any[] = [];
 
-  constructor(private route: Router) {
+  procesando: boolean = false;
+
+  constructor(private route: Router, private serviceUser: UserService) {
     this.respuestas = [];
     this.rasgos = [];
     sessionStorage.removeItem("respuestas");
@@ -208,8 +211,35 @@ export class TestComponent implements OnInit {
     });
     console.log(this.rasgos);
     await sessionStorage.removeItem('respuestas');
-    sessionStorage.setItem('respuestas', JSON.stringify(this.rasgos));
-    this.route.navigate(['resultados']);         
+
+  sessionStorage.setItem('respuestas', JSON.stringify(this.rasgos));
+  if(sessionStorage.getItem('email') != null) {
+    let data = {
+      email: sessionStorage.getItem('email'),
+      data: this.rasgos,
+    }
+    this.registrarData(data);                  
+  } else {
+    alert("No se encontro email, ingrese nuevamente");
+    this.route.navigate(['/']);          
+  } 
+  
+  }
+
+  registrarData(data: any) {
+    this.procesando = true;
+    this.serviceUser.registrarData(data).subscribe((res: any) => {
+     if(res && !res.status) {
+      alert("Algo inesperado paso al registrar los datos, intente nuevamente")
+     } else {
+      this.route.navigate(['resultados']); 
+     } 
+     this.procesando = false;
+    }, err => {
+      console.log(err);    
+      this.procesando = false;
+      alert("Algo inesperado paso al registrar la informacion")
+    })
   }
 
 }

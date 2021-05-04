@@ -319,7 +319,8 @@
       </div>
       <div class="row">
         <div class="col-12">
-          <button type="button" class="btn btn-success btn-lg btn-block" (click)="determinarRasgoDePersonalidad()">PROCESAR INFORMACION</button>
+          <button *ngIf="!procesando" type="button" class="btn btn-success btn-lg btn-block" (click)="determinarRasgoDePersonalidad()">PROCESAR INFORMACION</button>
+          <button *ngIf="procesando" type="button" class="btn btn-success btn-lg btn-block">PROCESANDO DATOS...</button>
         </div>
       </div>
     </div>
