@@ -19,7 +19,7 @@ export class TestComponent implements OnInit {
     this.respuestas = [];
     this.rasgos = [];
     sessionStorage.removeItem("respuestas");
-   }
+  }
 
   ngOnInit(): void {
   
@@ -210,9 +210,7 @@ export class TestComponent implements OnInit {
       }
     });
     console.log(this.rasgos);
-    await sessionStorage.removeItem('respuestas');
 
-  sessionStorage.setItem('respuestas', JSON.stringify(this.rasgos));
   if(sessionStorage.getItem('email') != null) {
     let data = {
       email: sessionStorage.getItem('email'),
@@ -232,8 +230,18 @@ export class TestComponent implements OnInit {
      if(res && !res.status) {
       alert("Algo inesperado paso al registrar los datos, intente nuevamente")
      } else {
+      this.rasgos = this.rasgos.filter((item, i) => {
+         if(!item.hasOwnProperty("p")) {
+            return item;
+         }
+        
+       })
+       console.log(this.rasgos);       
+       sessionStorage.removeItem('respuestas');
+       sessionStorage.setItem('respuestas', JSON.stringify(this.rasgos));
       this.route.navigate(['resultados']); 
      } 
+    
      this.procesando = false;
     }, err => {
       console.log(err);    
