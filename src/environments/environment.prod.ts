@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  urlService: "http://184.73.119.242:5000"
+  urlService: "http://34.239.119.157/:5000"
 };
