@@ -263,7 +263,7 @@ export class RespuestasComponent implements OnInit {
         labels: this.label6,
         datasets: [
           {
-            label: "Navegador web mas utilizado",
+            label: "Navegador web más utilizado",
             data: this.datap6,                 
           }
         ]

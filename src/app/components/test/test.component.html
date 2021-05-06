@@ -140,7 +140,7 @@
     <div class="col-md-12 col-sm-12 mt-5">
       <div class="card mt-4">
         <div class="card-header alert-secondary">
-          Test demografico
+          Test demográfico
         </div>
       <div class="card-body">
         <h5 class="card-title">1. Genero </h5>
@@ -320,7 +320,7 @@
       <div class="row">
         <div class="col-12">
           <button *ngIf="!procesando" type="button" class="btn btn-success btn-lg btn-block" (click)="determinarRasgoDePersonalidad()">PROCESAR INFORMACION</button>
-          <button *ngIf="procesando" type="button" class="btn btn-success btn-lg btn-block">PROCESANDO DATOS...</button>
+          <button *ngIf="procesando" type="button" class="btn btn-success btn-lg btn-block" disabled>PROCESANDO DATOS...</button>
         </div>
       </div>
     </div>
