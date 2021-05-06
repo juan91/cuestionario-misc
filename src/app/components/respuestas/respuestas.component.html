@@ -1,26 +1,57 @@
 <app-header></app-header>
-<div class="container" style="margin-top: 100px;">
+<div class="container" style="margin-top: 50px;">
   <div class="row align-content-center">
   <div class="col-md-12 col-sm-12 mt-5 mb-3">
-
-    <div class="card">      
-      <div class="card-body text-center">
-        <h4 class="alert-heading"><b>Resultados</b></h4>
-      </div>
-    </div> 
+    <h4 class="alert-heading"><b>Tu personalidad es:</b></h4>
     </div>
   </div>
   <div class="row"> 
-    <div class="col-sm-6 mb-3" *ngFor="let item of resultados; index as i">
+    <div class="col-sm-4 mb-2" *ngFor="let item of resultados; index as i">
       <div class="card">
-        <div class="card-body">
-          <img src="https://image.flaticon.com/icons/png/512/2581/2581653.png" alt="" width="60px" class="img-fluid">
-          <p class="card-text">{{item.r}}</p>         
+        <div class="card-body text-center" style="background-color: rgb(255, 255, 255); box-shadow: 2px 4px 4px rgb(78, 76, 76);">
+          <img src="https://image.flaticon.com/icons/png/512/2581/2581653.png" alt="" width="30px" class="img-fluid">
+          <p class="card-text text-justify">{{item.r}}</p>         
         </div>
       </div>
     </div>
   </div>
-  
+
+  <div class="card">      
+    <div class="card-body text-center">
+      <h4 class="alert-heading"><b>Resultados de todos los encuestados</b></h4>
+    </div>
+  </div> 
+
+  <div class="row" *ngIf="loading">    
+    <div class="col-12 text-center">
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>  
+      Cargando Gráficas ...
+    </div>
+  </div>
+  <div class="row" *ngIf="!loading">      
+    <div class="col-12">
+      <chart height="100"  width="100" [type]="typebar" [data]="grf1().data" [options]="grf1().options"></chart>
+    </div>
+    <div class="col-12">
+      <chart [type]="typeline" [data]="grf2().data" [options]="grf2().options"></chart>
+    </div>
+    <div class="col-12">
+      <chart [type]="typebar" [data]="grf3().data" [options]="grf3().options"></chart>
+    </div>
+    <div class="col-12">
+      <chart [type]="typeline" [data]="grf4().data" [options]="grf4().options"></chart>
+    </div>
+    <div class="col-12">
+      <chart [type]="typebar" [data]="grf5().data" [options]="grf5().options"></chart>
+    </div>
+    <div class="col-12">
+      <chart [type]="typeline" [data]="grf6().data" [options]="grf6().options"></chart>
+    </div>
+  </div>
 </div>
+<br>
+<br>
 
 

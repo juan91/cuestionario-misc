@@ -73,14 +73,13 @@ export class TestComponent implements OnInit {
   }
 
   async determinarRasgoDePersonalidad() {
+    console.log(this.respuestas.length);
+    
     if (this.respuestas.length < 11) {
       alert("Por favor complete todo el test")
       return;
     }
     this.rasgos = [];
-    console.log("resppp");
-    
-    console.log( this.respuestas);
     
     this.respuestas.forEach(item => {
       if(item.p === "p1") {
@@ -209,7 +208,6 @@ export class TestComponent implements OnInit {
         }
       }
     });
-    console.log(this.rasgos);
 
   if(sessionStorage.getItem('email') != null) {
     let data = {
@@ -227,6 +225,8 @@ export class TestComponent implements OnInit {
   registrarData(data: any) {
     this.procesando = true;
     this.serviceUser.registrarData(data).subscribe((res: any) => {
+      console.log("resssppp "+ res);
+      
      if(res && !res.status) {
       alert("Algo inesperado paso al registrar los datos, intente nuevamente")
      } else {
@@ -236,13 +236,11 @@ export class TestComponent implements OnInit {
          }
         
        })
-       console.log(this.rasgos);       
+       this.procesando = false;      
        sessionStorage.removeItem('respuestas');
        sessionStorage.setItem('respuestas', JSON.stringify(this.rasgos));
       this.route.navigate(['resultados']); 
-     } 
-    
-     this.procesando = false;
+     }      
     }, err => {
       console.log(err);    
       this.procesando = false;

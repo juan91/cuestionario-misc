@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { TestComponent } from './components/test/test.component';
+import { ChartModule } from 'angular2-chartjs';
 
 import {app_routing} from './app.routes';
 import { InicioComponent } from './components/inicio/inicio.component';
@@ -25,6 +26,7 @@ import { HeaderComponent } from './components/header/header.component';
     HttpClientModule,
     FormsModule,
     CommonModule,
+    ChartModule,
     app_routing
   ],
   providers: [],

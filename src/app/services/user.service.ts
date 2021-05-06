@@ -15,4 +15,8 @@ export class UserService {
   registrarData(data:any) {
     return this.http.post(`${URL}/v1/rasgos`, data);
   }
+
+  obtenerData() {
+    return this.http.get(`${URL}/v1/datos`);
+  }
 }
